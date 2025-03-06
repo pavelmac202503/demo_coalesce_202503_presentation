@@ -1,0 +1,14 @@
+fileVersion: 1
+id: "15"
+mappingDefinitions:
+  DW_DATASTORE:
+    database: PROD_DWH
+    schema: DATASTORE
+  DW_PRESENTATION:
+    database: PROD_DWH
+    schema: PRESENTATION
+  DW_STG_PRESENTATION:
+    database: PROD_DWH
+    schema: STG_PRESENTATION
+name: PROD
+type: Environment
