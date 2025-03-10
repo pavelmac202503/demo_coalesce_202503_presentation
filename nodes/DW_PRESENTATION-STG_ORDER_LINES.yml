@@ -295,12 +295,13 @@ operation:
           - locationName: DW_DATASTORE
             nodeName: DS_ORDERS
         join:
-          joinCondition: |
+          joinCondition: |-
             FROM {{ ref('DW_DATASTORE', 'DS_LINEITEM') }} "DS_LINEITEM"
                 INNER JOIN {{ ref('DW_DATASTORE', 'DS_ORDERS') }} "DS_ORDERS"
                     ON ("DS_LINEITEM"."L_ORDERKEY" = "DS_ORDERS"."O_ORDERKEY"
                     AND "DS_LINEITEM"."SYSTEM_CURRENT_FLAG" = 'Y'
                     AND "DS_ORDERS"."SYSTEM_CURRENT_FLAG" = 'Y')
+            WHERE "DS_ORDERS"."O_ORDERDATE" >= '{{ parameters.process_after_date }}'
         name: STG_ORDER_LINES
         noLinkRefs: []
   name: STG_ORDER_LINES
