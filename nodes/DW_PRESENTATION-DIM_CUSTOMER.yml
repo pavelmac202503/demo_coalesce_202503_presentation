@@ -3,7 +3,11 @@ id: 98fa5d8e-2331-41fe-8039-3e4453ec2894
 name: DIM_CUSTOMER
 operation:
   config:
-    postSQL: ""
+    postSQL: |-
+      UPDATE {{ ref(node.location.name, node.name) }}
+      SET SYSTEM_START_DATE = '2000-01-01'
+      WHERE SYSTEM_VERSION = 1
+      AND SYSTEM_START_DATE != '2000-01-01'
     preSQL: ""
     testsEnabled: true
   database: ""
@@ -40,7 +44,7 @@ operation:
         dataType: NUMBER(38,0)
         description: ""
         isBusinessKey: true
-        name: CUSTOMER_KEY
+        name: CUSTOMER_CODE
         nullable: false
         sourceColumnReferences:
           - columnReferences:
