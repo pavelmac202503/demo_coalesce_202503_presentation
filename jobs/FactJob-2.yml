@@ -1,6 +1,6 @@
 excludeSelector: ""
 fileVersion: 1
 id: "2"
-includeSelector: "{subgraph: \"FACT Subgraph\"}"
+includeSelector: "{subgraph: \"Fact Subgraph\"}"
 name: Fact Job
 type: Job
