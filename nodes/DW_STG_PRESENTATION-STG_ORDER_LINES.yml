@@ -12,7 +12,7 @@ operation:
   deployEnabled: true
   description: Lineitem data as defined by TPC-H
   isMultisource: false
-  locationName: DW_PRESENTATION
+  locationName: DW_STG_PRESENTATION
   materializationType: table
   metadata:
     appliedNodeTests: []
@@ -286,7 +286,9 @@ operation:
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
-      - aliases: {}
+      - aliases:
+          DS_LINEITEM: 915aa48c-e3b6-4113-93ed-7eca2091883b
+          DS_ORDERS: 0af3ea13-7e87-43a6-b6c2-72ecc0a30c50
         customSQL:
           customSQL: ""
         dependencies:
@@ -302,6 +304,8 @@ operation:
                     AND "DS_LINEITEM"."SYSTEM_CURRENT_FLAG" = 'Y'
                     AND "DS_ORDERS"."SYSTEM_CURRENT_FLAG" = 'Y')
             WHERE "DS_ORDERS"."O_ORDERDATE" >= '{{ parameters.process_after_date }}'
+            AND   "DS_ORDERS"."SYSTEM_CURRENT_FLAG" = 'Y'
+            AND   "DS_LINEITEM"."SYSTEM_CURRENT_FLAG" = 'Y'
         name: STG_ORDER_LINES
         noLinkRefs: []
   name: STG_ORDER_LINES

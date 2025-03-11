@@ -300,20 +300,23 @@ operation:
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
-      - aliases: {}
+      - aliases:
+          DIM_CUSTOMER: 98fa5d8e-2331-41fe-8039-3e4453ec2894
+          STG_ORDER_LINES: dd54fed8-93ff-43b3-afd4-ad288782e321
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: DW_PRESENTATION
             nodeName: DIM_CUSTOMER
-          - locationName: DW_PRESENTATION
+          - locationName: DW_STG_PRESENTATION
             nodeName: STG_ORDER_LINES
         join:
           joinCondition: |-
-            FROM {{ ref('DW_PRESENTATION', 'STG_ORDER_LINES') }} "STG_ORDER_LINES"
+            FROM {{ ref('DW_STG_PRESENTATION', 'STG_ORDER_LINES') }} "STG_ORDER_LINES"
                 LEFT JOIN {{ ref('DW_PRESENTATION', 'DIM_CUSTOMER') }} "DIM_CUSTOMER"
                     ON ("STG_ORDER_LINES"."CUSTOMER_CODE" = "DIM_CUSTOMER"."CUSTOMER_CODE"
                     AND "DIM_CUSTOMER"."SYSTEM_CURRENT_FLAG" = 'Y')
+                    
         name: STG_ORDER_LINES_001
         noLinkRefs: []
   name: STG_ORDER_LINES_001

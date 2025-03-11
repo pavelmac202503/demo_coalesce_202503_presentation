@@ -160,7 +160,9 @@ operation:
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
-      - aliases: {}
+      - aliases:
+          DIM_CUSTOMER: 98fa5d8e-2331-41fe-8039-3e4453ec2894
+          DS_ORDERS: 0af3ea13-7e87-43a6-b6c2-72ecc0a30c50
         customSQL:
           customSQL: ""
         dependencies:
@@ -175,6 +177,7 @@ operation:
                     ON ("DS_ORDERS"."O_CUSTKEY" = "DIM_CUSTOMER"."CUSTOMER_CODE"
                     AND "DIM_CUSTOMER"."SYSTEM_CURRENT_FLAG" = 'Y')
             WHERE "DS_ORDERS"."O_ORDERDATE" >= '{{ parameters.process_after_date }}'
+            AND   "DS_ORDERS"."SYSTEM_CURRENT_FLAG" = 'Y'
         name: STG_ORDERS
         noLinkRefs: []
   name: STG_ORDERS
