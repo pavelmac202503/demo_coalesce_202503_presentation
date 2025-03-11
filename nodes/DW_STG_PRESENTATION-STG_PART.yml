@@ -1,0 +1,168 @@
+fileVersion: 1
+id: b88a1c44-c4eb-48f1-b5e3-2dbf0685a48e
+name: STG_PART
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: Part data as defined by TPC-H
+  isMultisource: false
+  locationName: DW_STG_PRESENTATION
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 549e478a-7017-4579-9e37-746efc35da2b
+          stepCounter: b88a1c44-c4eb-48f1-b5e3-2dbf0685a48e
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: PART_CODE
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: adc624db-ba6b-4e92-ba52-c403dd639dd5
+                stepCounter: 7664da9c-39b8-44f8-abc3-ae36e443cf77
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c2d35f45-5cfc-4553-a5c4-ae11ad2afe30
+          stepCounter: b88a1c44-c4eb-48f1-b5e3-2dbf0685a48e
+        config: {}
+        dataType: VARCHAR(55)
+        description: ""
+        name: PART_NAME
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 62b59db7-27c2-4244-a937-f49eab363b06
+                stepCounter: 7664da9c-39b8-44f8-abc3-ae36e443cf77
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2c536a89-80b3-4605-bd53-7352a2b6c5ee
+          stepCounter: b88a1c44-c4eb-48f1-b5e3-2dbf0685a48e
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: MFGR
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8509c5f6-9164-42f9-b411-7e59b8ac3cbd
+                stepCounter: 7664da9c-39b8-44f8-abc3-ae36e443cf77
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 13f4aa44-2d5a-40d6-bb84-94c8f9614466
+          stepCounter: b88a1c44-c4eb-48f1-b5e3-2dbf0685a48e
+        config: {}
+        dataType: VARCHAR(10)
+        description: ""
+        name: BRAND
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d806fadc-3cc1-42f3-b55b-275890f8d779
+                stepCounter: 7664da9c-39b8-44f8-abc3-ae36e443cf77
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4da6d73f-2f2e-45c9-92e8-07111e4b485b
+          stepCounter: b88a1c44-c4eb-48f1-b5e3-2dbf0685a48e
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: TYPE
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c5ab0cbe-277f-418b-bbfb-6aa8cb3487d3
+                stepCounter: 7664da9c-39b8-44f8-abc3-ae36e443cf77
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ca35c5d3-062f-4bf9-8c18-46a461b50e77
+          stepCounter: b88a1c44-c4eb-48f1-b5e3-2dbf0685a48e
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: SIZE
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a434abb2-d290-43df-a294-d4a40369120a
+                stepCounter: 7664da9c-39b8-44f8-abc3-ae36e443cf77
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c6ba4b39-0e41-439d-8d8b-5c4237abf7f5
+          stepCounter: b88a1c44-c4eb-48f1-b5e3-2dbf0685a48e
+        config: {}
+        dataType: VARCHAR(10)
+        description: ""
+        name: CONTAINER
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0257c0d8-341c-4964-9875-dfff05a5b7fc
+                stepCounter: 7664da9c-39b8-44f8-abc3-ae36e443cf77
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fae4bfa2-3f97-449b-bf89-2f539be57538
+          stepCounter: b88a1c44-c4eb-48f1-b5e3-2dbf0685a48e
+        config: {}
+        dataType: NUMBER(12,2)
+        description: ""
+        name: RETAILPRICE
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5bbb1c57-98d7-4227-b806-9626f9092b5b
+                stepCounter: 7664da9c-39b8-44f8-abc3-ae36e443cf77
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 308b12d1-8ac6-44ae-9ede-8a84db60c70e
+          stepCounter: b88a1c44-c4eb-48f1-b5e3-2dbf0685a48e
+        config: {}
+        dataType: VARCHAR(23)
+        description: ""
+        name: PART_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 10d94deb-e268-4ef2-b04e-927b8eae4fd0
+                stepCounter: 7664da9c-39b8-44f8-abc3-ae36e443cf77
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DS_PART: 7664da9c-39b8-44f8-abc3-ae36e443cf77
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DW_DATASTORE
+            nodeName: DS_PART
+        join:
+          joinCondition: |-
+            FROM {{ ref('DW_DATASTORE', 'DS_PART') }} "DS_PART"
+            WHERE "DS_PART"."SYSTEM_CURRENT_FLAG" = 'Y'
+        name: STG_PART
+        noLinkRefs: []
+  name: STG_PART
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

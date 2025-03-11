@@ -1,0 +1,112 @@
+fileVersion: 1
+id: 02b82daa-4116-4641-bcff-47ff3df4c0c4
+name: STG_PARTS_SUPPLIER
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: Partsupp data as defined by TPC-H
+  isMultisource: false
+  locationName: DW_STG_PRESENTATION
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4f62aefb-182f-48f8-b078-281455555c62
+          stepCounter: 02b82daa-4116-4641-bcff-47ff3df4c0c4
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: PART_CODE
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ef7d0d6b-b140-48fe-8d5e-dbe8e2165532
+                stepCounter: d19667b8-cc0e-4b6c-808e-0dd40bcaa72d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 18d66e6d-d380-4570-b6fe-dade9d217785
+          stepCounter: 02b82daa-4116-4641-bcff-47ff3df4c0c4
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: SUPPLIER_CODE
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 994316cf-5b95-44f6-932f-d65c69255bfe
+                stepCounter: d19667b8-cc0e-4b6c-808e-0dd40bcaa72d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d3407b5e-d8ed-488a-b569-14a530fc1fff
+          stepCounter: 02b82daa-4116-4641-bcff-47ff3df4c0c4
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: AVAIL_QTY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9f287742-fcad-4313-8280-34b42eabad10
+                stepCounter: d19667b8-cc0e-4b6c-808e-0dd40bcaa72d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: dedeec25-9cbd-4a01-941b-20b7812b4fd7
+          stepCounter: 02b82daa-4116-4641-bcff-47ff3df4c0c4
+        config: {}
+        dataType: NUMBER(12,2)
+        description: ""
+        name: SUPPLY_COST
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d3c0d53d-7972-4751-a3d0-995fe1f4c543
+                stepCounter: d19667b8-cc0e-4b6c-808e-0dd40bcaa72d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7c336801-178c-4378-8a5f-77fb4303683a
+          stepCounter: 02b82daa-4116-4641-bcff-47ff3df4c0c4
+        config: {}
+        dataType: VARCHAR(199)
+        description: ""
+        name: PARTS_SUPPLIER_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ec284f03-6f6d-4f64-b7d4-8d116a79128d
+                stepCounter: d19667b8-cc0e-4b6c-808e-0dd40bcaa72d
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DS_PARTSUPP: d19667b8-cc0e-4b6c-808e-0dd40bcaa72d
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DW_DATASTORE
+            nodeName: DS_PARTSUPP
+        join:
+          joinCondition: |-
+            FROM {{ ref('DW_DATASTORE', 'DS_PARTSUPP') }} "DS_PARTSUPP"
+            WHERE "SYSTEM_CURRENT_FLAG" = 'Y'
+        name: STG_PARTS_SUPPLIER
+        noLinkRefs: []
+  name: STG_PARTS_SUPPLIER
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
