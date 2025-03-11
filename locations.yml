@@ -1,3 +1,6 @@
-defaultStorageMapping: null
+defaultStorageMapping: DW_PRESENTATION
 fileVersion: 1
-locations: []
+locations:
+  - DW_DATASTORE
+  - DW_PRESENTATION
+  - DW_STG_PRESENTATION

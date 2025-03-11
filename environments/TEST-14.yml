@@ -1,0 +1,14 @@
+fileVersion: 1
+id: "14"
+mappingDefinitions:
+  DW_DATASTORE:
+    database: TEST_DWH
+    schema: DATASTORE
+  DW_PRESENTATION:
+    database: TEST_DWH
+    schema: PRESENTATION
+  DW_STG_PRESENTATION:
+    database: TEST_DWH
+    schema: STG_PRESENTATION
+name: TEST
+type: Environment

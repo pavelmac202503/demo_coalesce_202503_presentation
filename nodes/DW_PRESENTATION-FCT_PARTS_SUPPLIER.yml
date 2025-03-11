@@ -1,0 +1,185 @@
+fileVersion: 1
+id: 7d47f7e9-8bd7-4065-9a22-e12358962b53
+name: FCT_PARTS_SUPPLIER
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: Partsupp data as defined by TPC-H
+  isMultisource: false
+  locationName: DW_PRESENTATION
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d36b2f05-2d82-4370-bf3c-1876a5a2128c
+          stepCounter: 7d47f7e9-8bd7-4065-9a22-e12358962b53
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        isBusinessKey: true
+        name: PART_CODE
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4f62aefb-182f-48f8-b078-281455555c62
+                stepCounter: 02b82daa-4116-4641-bcff-47ff3df4c0c4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e7cd6b67-d9d8-4a1d-a136-d7e6bcb83c92
+          stepCounter: 7d47f7e9-8bd7-4065-9a22-e12358962b53
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: DIM_PART_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cd6bb9b7-9ca1-4e6c-a943-ca5ce1c0394f
+                stepCounter: 81fbc2ea-37ed-4172-8c3f-b2aafa1ea5a4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8462b2af-4cf7-46f7-aa43-4129ff0d7191
+          stepCounter: 7d47f7e9-8bd7-4065-9a22-e12358962b53
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        isBusinessKey: true
+        name: SUPPLIER_CODE
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 18d66e6d-d380-4570-b6fe-dade9d217785
+                stepCounter: 02b82daa-4116-4641-bcff-47ff3df4c0c4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5ccbd1d8-cfad-464e-8d77-12074fc3d966
+          stepCounter: 7d47f7e9-8bd7-4065-9a22-e12358962b53
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: DIM_SUPPLIER_KEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 31f80d95-552d-40bc-805a-8a9ba369ad44
+                stepCounter: d8e2e8b2-ea70-4890-bdf4-77e7b860e29d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 64fb29bc-75ce-4863-8353-e2867f02e328
+          stepCounter: 7d47f7e9-8bd7-4065-9a22-e12358962b53
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: AVAIL_QTY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d3407b5e-d8ed-488a-b569-14a530fc1fff
+                stepCounter: 02b82daa-4116-4641-bcff-47ff3df4c0c4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 994e03c3-aba6-47d1-9d1a-f4c4ac3c62b2
+          stepCounter: 7d47f7e9-8bd7-4065-9a22-e12358962b53
+        config: {}
+        dataType: NUMBER(12,2)
+        description: ""
+        name: SUPPLY_COST
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dedeec25-9cbd-4a01-941b-20b7812b4fd7
+                stepCounter: 02b82daa-4116-4641-bcff-47ff3df4c0c4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6e7cc15b-a7b8-4f69-bd7b-c476ed6e6d7e
+          stepCounter: 7d47f7e9-8bd7-4065-9a22-e12358962b53
+        config: {}
+        dataType: VARCHAR(199)
+        description: ""
+        name: PARTS_SUPPLIER_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7c336801-178c-4378-8a5f-77fb4303683a
+                stepCounter: 02b82daa-4116-4641-bcff-47ff3df4c0c4
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fd04740f-b23f-431a-918e-b4c178405ddb
+          stepCounter: 7d47f7e9-8bd7-4065-9a22-e12358962b53
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemCreateDate: true
+        name: SYSTEM_CREATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9131ce7e-1d84-441d-a4bd-9a1bc8ae5a3f
+          stepCounter: 7d47f7e9-8bd7-4065-9a22-e12358962b53
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemUpdateDate: true
+        name: SYSTEM_UPDATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DIM_PART: 81fbc2ea-37ed-4172-8c3f-b2aafa1ea5a4
+          DIM_SUPPLIER: d8e2e8b2-ea70-4890-bdf4-77e7b860e29d
+          STG_PARTS_SUPPLIER: 02b82daa-4116-4641-bcff-47ff3df4c0c4
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DW_PRESENTATION
+            nodeName: DIM_PART
+          - locationName: DW_PRESENTATION
+            nodeName: DIM_SUPPLIER
+          - locationName: DW_STG_PRESENTATION
+            nodeName: STG_PARTS_SUPPLIER
+        join:
+          joinCondition: |-
+            FROM {{ ref('DW_STG_PRESENTATION', 'STG_PARTS_SUPPLIER') }} "STG_PARTS_SUPPLIER"
+                LEFT JOIN {{ ref('DW_PRESENTATION', 'DIM_PART') }} "DIM_PART"
+                    ON ("STG_PARTS_SUPPLIER"."PART_CODE" = "DIM_PART"."PART_CODE"
+                    AND "DIM_PART"."SYSTEM_CURRENT_FLAG" = 'Y')
+                LEFT JOIN {{ ref('DW_PRESENTATION', 'DIM_SUPPLIER') }} "DIM_SUPPLIER"
+                    ON ("STG_PARTS_SUPPLIER"."SUPPLIER_CODE" = "DIM_SUPPLIER"."SUPPLIER_CODE"
+                    AND "DIM_SUPPLIER"."SYSTEM_CURRENT_FLAG" = 'Y')
+        name: FCT_PARTS_SUPPLIER
+        noLinkRefs: []
+  name: FCT_PARTS_SUPPLIER
+  overrideSQL: false
+  schema: ""
+  sqlType: Fact
+  type: sql
+  version: 1
+type: Node

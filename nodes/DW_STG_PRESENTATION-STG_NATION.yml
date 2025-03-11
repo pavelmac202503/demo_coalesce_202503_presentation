@@ -1,0 +1,118 @@
+fileVersion: 1
+id: 68956a97-4172-4f75-ac7b-35594e3c9810
+name: STG_NATION
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: Nation data as defined by TPC-H
+  isMultisource: false
+  locationName: DW_STG_PRESENTATION
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46ab8e39-0b81-4c05-a666-a9589f0a051b
+          stepCounter: 68956a97-4172-4f75-ac7b-35594e3c9810
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: NATION_CODE
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a1084db0-89fd-4b6a-9ad9-226a51a588b3
+                stepCounter: 2e006670-bc3e-432f-9ec5-95f29201f8ec
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 08d21514-4e75-4c09-9e72-a99faffa8df4
+          stepCounter: 68956a97-4172-4f75-ac7b-35594e3c9810
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: NATION_NAME
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cad38e02-1c95-4b93-9133-0368d5182a8b
+                stepCounter: 2e006670-bc3e-432f-9ec5-95f29201f8ec
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ceb696ba-e914-49fc-b78a-5a68b0ba6f3a
+          stepCounter: 68956a97-4172-4f75-ac7b-35594e3c9810
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: REGION_CODE
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bf4470b1-82a7-41ba-a5b4-91abea4ac09a
+                stepCounter: 2e006670-bc3e-432f-9ec5-95f29201f8ec
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 99a3cda9-628d-4ad4-a046-ec0c878e9937
+          stepCounter: 68956a97-4172-4f75-ac7b-35594e3c9810
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: REGION_NAME
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7fc77881-c6d3-4c8f-8f96-71aa2581b466
+                stepCounter: d1da16dd-88f6-4f89-bd9c-be3f91fa383d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 85db23a5-575b-46aa-a04d-5bece7853719
+          stepCounter: 68956a97-4172-4f75-ac7b-35594e3c9810
+        config: {}
+        dataType: VARCHAR(152)
+        description: ""
+        name: NATION_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2d84d35c-0294-45b7-b00b-c4b8417963c5
+                stepCounter: 2e006670-bc3e-432f-9ec5-95f29201f8ec
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          DS_NATION: 2e006670-bc3e-432f-9ec5-95f29201f8ec
+          DS_REGION: d1da16dd-88f6-4f89-bd9c-be3f91fa383d
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: DW_DATASTORE
+            nodeName: DS_NATION
+          - locationName: DW_DATASTORE
+            nodeName: DS_REGION
+        join:
+          joinCondition: |-
+            FROM {{ ref('DW_DATASTORE', 'DS_NATION') }} "DS_NATION"
+                INNER JOIN {{ ref('DW_DATASTORE', 'DS_REGION') }} "DS_REGION"
+                    ON ("DS_NATION"."N_REGIONKEY" = "DS_REGION"."R_REGIONKEY"
+                    AND "DS_REGION"."SYSTEM_CURRENT_FLAG" = 'Y')
+            WHERE "DS_NATION"."SYSTEM_CURRENT_FLAG" = 'Y'
+        name: STG_NATION
+        noLinkRefs: []
+  name: STG_NATION
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
